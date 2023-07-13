@@ -1,0 +1,528 @@
+/*--------------------------------------------------------------
+# Inner Circle - Single Post
+
+1. Override existing styles from parent theme SASS
+2. File attachment
+--------------------------------------------------------------*/
+/*
+Media queries modeled on those found in Bootstrap.
+See: https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints for context.
+*/
+.single main {
+  padding: 0; }
+
+/*--------------------------------------------------------------
+3. Hero + title layout
+--------------------------------------------------------------*/
+#single-hero {
+  margin-bottom: 2rem;
+  background-color: #e8e8e8; }
+  #single-hero .title-wrap {
+    color: #191919;
+    padding: 2rem 2rem 0rem 2rem; }
+    #single-hero .title-wrap h1 {
+      /* Like an H2, mobile */
+      margin: 0;
+      font-size: 2rem;
+      line-height: 2.125rem;
+      letter-spacing: -0.07rem; }
+  #single-hero .tag-wrap {
+    color: #191919;
+    padding: 1rem 2rem 2rem 2rem; }
+    #single-hero .tag-wrap .entry-meta {
+      margin-bottom: 1rem; }
+    #single-hero .tag-wrap .tags-links {
+      margin-bottom: 0; }
+      #single-hero .tag-wrap .tags-links a {
+        color: #191919; }
+    #single-hero .tag-wrap svg {
+      margin-right: 0.5rem; }
+  #single-hero .category-wrap {
+    background-color: #191919;
+    color: #ffffff;
+    height: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+    #single-hero .category-wrap .category-tags .btn {
+      background-color: #191919;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-top: 0; }
+
+@media (min-width: calc(992px)) {
+  #single-hero {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: auto minmax(0px, 800px) 400px auto;
+    grid-template-rows: auto auto; }
+    #single-hero .title-wrap {
+      grid-row: 1;
+      grid-column: 2 / span 2;
+      padding: 2rem 8rem 0 0; }
+      #single-hero .title-wrap h1 {
+        /* Like an H2 */
+        margin: 0;
+        font-size: 2.5rem;
+        line-height: 2.75rem;
+        letter-spacing: -.0875rem; }
+    #single-hero .tag-wrap {
+      grid-row: 2;
+      grid-column: 2;
+      padding: 1rem 0 2rem 0; }
+      #single-hero .tag-wrap .entry-meta {
+        margin-bottom: .5rem; }
+    #single-hero .category-wrap {
+      grid-row: 2;
+      grid-column: 3;
+      align-self: end;
+      margin-bottom: -1.5rem;
+      margin-left: calc(2rem + 12px); }
+      #single-hero .category-wrap .category-tags {
+        text-align: center;
+        margin: 0; } }
+
+/*--------------------------------------------------------------
+4. content-wrap, adjust for desktop layout.
+--------------------------------------------------------------*/
+@media (min-width: calc(992px)) {
+  main > .container.content-wrap {
+    padding-left: 0;
+    padding-right: 0; } }
+
+/*--------------------------------------------------------------
+5. File Attachment (.downloads)
+--------------------------------------------------------------*/
+.downloads {
+  flex-direction: column;
+  position: relative;
+  margin: 3rem 0;
+  padding-top: 3rem; }
+  .downloads:before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    max-width: 16rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #d0d0d0; }
+  .downloads img {
+    margin-bottom: 1.5rem; }
+  .downloads img.attachment-icon {
+    padding: 1.5rem;
+    border: 1px solid #e8e8e8; }
+  .downloads .media-body p:first-child {
+    font-weight: 700; }
+
+@media (min-width: calc(992px)) {
+  .downloads {
+    flex-direction: row; }
+    .downloads img {
+      margin-right: 1.5rem; } }
+
+/*--------------------------------------------------------------
+5. Featured Image
+--------------------------------------------------------------*/
+.wp-block-image.wp-post-image {
+  margin-bottom: 3rem; }
+
+/*--------------------------------------------------------------
+# Inner Circle - Tag.php
+
+1. Mobile
+2. Desktop
+--------------------------------------------------------------*/
+/*
+Media queries modeled on those found in Bootstrap.
+See: https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints for context.
+*/
+/*--------------------------------------------------------------
+1. Mobile
+--------------------------------------------------------------*/
+.archive.tag #tag-hero .term-description {
+  font-size: 1.25rem;
+  padding-right: 2rem; }
+
+.archive.tag #tag-hero img {
+  display: none; }
+
+.archive.tag #tag-hero .container {
+  border-bottom: 1px solid #e8e8e8;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem; }
+
+.archive.tag article {
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem; }
+  .archive.tag article:last-child {
+    border-bottom: 0; }
+
+.archive.tag .entry-footer {
+  display: inline-block; }
+  .archive.tag .entry-footer svg {
+    margin-right: 0.5rem; }
+  .archive.tag .entry-footer svg.fa-clock, .archive.tag .entry-footer svg.fa-map-marker-alt {
+    margin-left: 1.5rem; }
+  .archive.tag .entry-footer .card-tags {
+    margin-top: 1rem;
+    padding: 0; }
+
+/*--------------------------------------------------------------
+2. Desktop
+--------------------------------------------------------------*/
+@media (min-width: calc(992px)) {
+  .archive.tag #tag-hero .container {
+    border-bottom: 2px solid #e8e8e8;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem; }
+  .archive.tag #tag-hero img {
+    display: block;
+    margin-top: 1rem; }
+  .archive.tag article {
+    padding-bottom: 4rem;
+    margin-bottom: 2rem; } }
+
+/*--------------------------------------------------------------
+# Inner Circle - category.php
+--------------------------------------------------------------*/
+/*
+Media queries modeled on those found in Bootstrap.
+See: https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints for context.
+*/
+/*--------------------------------------------------------------
+1. Mobile
+--------------------------------------------------------------*/
+.archive.category .entry-header {
+  display: block;
+  padding: 0; }
+  .archive.category .entry-header .entry-title {
+    border-bottom: 0; }
+
+.archive.category aside {
+  display: none; }
+
+.archive.category .archive-loop article {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #d0d0d0; }
+
+.archive.category span.page-link {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem; }
+
+.archive.category .ic-post-columns {
+  margin-top: 1rem;
+  row-gap: 3rem; }
+
+.archive.category .entry-footer {
+  display: inline-block; }
+  .archive.category .entry-footer svg {
+    margin-right: 0.5rem; }
+  .archive.category .entry-footer svg.fa-clock,
+  .archive.category .entry-footer svg.fa-map-marker-alt {
+    margin-left: 1.5rem; }
+
+/*--------------------------------------------------------------
+2. Desktop
+--------------------------------------------------------------*/
+@media (min-width: calc(768px)) {
+  .archive.category div[class^=uds-hero] + .container {
+    margin-top: 4rem; }
+  .archive.category .category-header {
+    padding-top: 4rem; }
+    .archive.category .category-header + .container {
+      margin-top: 4rem; }
+  .archive.category .archive-loop {
+    padding-right: 4rem; }
+  .archive.category aside {
+    display: block; } }
+
+/*--------------------------------------------------------------
+# Inner Circle Post Group Block
+
+1. Mobile
+2. Desktop, LG
+3. Desktop, XL
+--------------------------------------------------------------*/
+/*
+Media queries modeled on those found in Bootstrap.
+See: https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints for context.
+*/
+/*--------------------------------------------------------------
+1. Mobile
+--------------------------------------------------------------*/
+.ic-post-group {
+  position: relative;
+  padding-top: 1rem; }
+  .ic-post-group:before {
+    content: '';
+    height: 1rem;
+    width: calc(100% - 2rem);
+    background-color: #ffc627;
+    position: absolute;
+    left: 1rem;
+    top: 0; }
+  .ic-post-group img {
+    width: 100%;
+    height: auto; }
+  .ic-post-group a {
+    padding: 0.5rem 1rem;
+    display: block;
+    text-decoration: none;
+    color: #191919; }
+    .ic-post-group a h4 {
+      text-decoration: underline;
+      color: #8c1d40; }
+  .ic-post-group .story {
+    padding: 0.5rem;
+    border-bottom: 1px solid #d0d0d0; }
+    .ic-post-group .story .event-meta svg {
+      margin-right: 0.5rem;
+      margin-left: 1rem; }
+      .ic-post-group .story .event-meta svg:first-child {
+        margin-left: 0; }
+
+/*--------------------------------------------------------------
+2. Desktop, LG
+--------------------------------------------------------------*/
+@media (min-width: calc(992px)) {
+  .ic-post-group {
+    display: grid;
+    grid-template-columns: 20rem 1fr 1.5rem;
+    grid-template-rows: 1.5rem 1fr 1.5rem;
+    gap: 0px 0px; }
+    .ic-post-group:before {
+      display: none; }
+    .ic-post-group img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      grid-row: 1 / span 3;
+      grid-column: 2; }
+    .ic-post-group .story-wrap {
+      grid-row: 2;
+      grid-column: 1; }
+      .ic-post-group .story-wrap .story {
+        transition: 0.5s cubic-bezier(0.19, 1, 0.19, 1);
+        background-color: #fafafa;
+        margin-bottom: 1rem;
+        border: 1px solid #e8e8e8;
+        border-right: 0;
+        margin-left: 1.5rem; }
+        .ic-post-group .story-wrap .story:hover {
+          padding-right: 2rem;
+          margin-left: 0rem; }
+        .ic-post-group .story-wrap .story h4 {
+          margin: 0 auto .25rem;
+          color: #191919;
+          text-decoration: none; }
+        .ic-post-group .story-wrap .story .event-meta {
+          margin-bottom: 0; }
+        .ic-post-group .story-wrap .story a {
+          color: #191919;
+          text-decoration: none; }
+        .ic-post-group .story-wrap .story.active {
+          background-color: #ffc627;
+          border-color: #ffc627;
+          position: relative; }
+          .ic-post-group .story-wrap .story.active:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 16px 0 16px 27.7px;
+            border-color: transparent transparent transparent #ffc627;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -1.5rem; }
+        .ic-post-group .story-wrap .story:last-child {
+          margin-bottom: 0; }
+        .ic-post-group .story-wrap .story:nth-child(3) {
+          display: none; }
+    .ic-post-group:after {
+      content: '';
+      width: 1.5rem;
+      background-color: #ffc627;
+      grid-column: 3;
+      grid-row: 2; }
+  .ic-post-group.reversed {
+    grid-template-columns: 1.5rem 1fr 28rem; }
+    .ic-post-group.reversed:after {
+      grid-column: 1; }
+    .ic-post-group.reversed img {
+      grid-column: 2; }
+    .ic-post-group.reversed .story-wrap {
+      grid-column: 3; }
+      .ic-post-group.reversed .story-wrap .story {
+        margin: 0 1.5rem 1rem 0; }
+        .ic-post-group.reversed .story-wrap .story:hover {
+          margin-right: 0;
+          padding-left: 1.5rem; }
+        .ic-post-group.reversed .story-wrap .story.active {
+          margin-right: 0;
+          padding-left: 1.5rem; }
+          .ic-post-group.reversed .story-wrap .story.active:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 16px 27.7px 16px 0;
+            border-color: transparent #ffc627 transparent transparent;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -1.5rem; } }
+
+/*--------------------------------------------------------------
+3. Desktop, XL
+--------------------------------------------------------------*/
+@media (min-width: calc(1224px)) {
+  .ic-post-group {
+    grid-template-columns: 28rem 1fr 1.5rem; }
+    .ic-post-group .story-wrap .story:nth-child(3) {
+      display: block; }
+  .ic-post-group.reversed {
+    grid-template-columns: 1.5rem 1fr 28rem; } }
+
+/*--------------------------------------------------------------
+3. Admin only
+--------------------------------------------------------------*/
+.wp-block .acf-block-preview .ic-post-group a {
+  pointer-events: none; }
+
+/*--------------------------------------------------------------
+# Inner Circle Post Column Block
+
+1. Mobile
+--------------------------------------------------------------*/
+/*
+Media queries modeled on those found in Bootstrap.
+See: https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints for context.
+*/
+/*--------------------------------------------------------------
+1. Mobile
+--------------------------------------------------------------*/
+.ic-post-column .story {
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem; }
+  .ic-post-column .story svg {
+    margin-right: 0.5rem;
+    margin-left: 1rem; }
+    .ic-post-column .story svg:first-child {
+      margin-left: 0; }
+  .ic-post-column .story h4 > a {
+    color: #191919;
+    text-decoration: none; }
+    .ic-post-column .story h4 > a:hover {
+      text-decoration: underline; }
+
+/*--------------------------------------------------------------
+3. Admin only
+--------------------------------------------------------------*/
+.wp-block .acf-block-preview .ic-post-column a {
+  pointer-events: none; }
+
+/*--------------------------------------------------------------
+# Inner Circle Grid Links
+
+1. Mobile
+2 Desktop modifiers
+--------------------------------------------------------------*/
+/*
+Media queries modeled on those found in Bootstrap.
+See: https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints for context.
+*/
+/*--------------------------------------------------------------
+1. Mobile
+--------------------------------------------------------------*/
+.ic-grid-links {
+  grid-template-columns: 1fr;
+  display: grid;
+  grid-template-rows: auto;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  row-gap: 1.5rem; }
+  .ic-grid-links a {
+    font-size: 1.25rem;
+    letter-spacing: -0.01875rem;
+    font-weight: 700;
+    border: 1px solid #d0d0d0;
+    color: #191919;
+    padding: 1.5rem;
+    text-decoration: none; }
+    .ic-grid-links a svg {
+      margin-right: 0.5rem; }
+    .ic-grid-links a:hover {
+      text-decoration: underline; }
+
+/*--------------------------------------------------------------
+2. Desktop modifiers
+--------------------------------------------------------------*/
+@media (min-width: calc(768px)) {
+  .ic-grid-links.mobile-at-md.two-columns {
+    grid-template-columns: repeat(2, 1fr); }
+  .ic-grid-links.mobile-at-md.three-columns {
+    grid-template-columns: repeat(3, 1fr); }
+  .ic-grid-links.mobile-at-md.four-columns {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media (min-width: calc(992px)) {
+  .ic-grid-links.mobile-at-lg.two-columns {
+    grid-template-columns: repeat(2, 1fr); }
+  .ic-grid-links.mobile-at-lg.three-columns {
+    grid-template-columns: repeat(3, 1fr); }
+  .ic-grid-links.mobile-at-lg.four-columns {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media (min-width: calc(1224px)) {
+  .ic-grid-links.mobile-at-xl.two-columns {
+    grid-template-columns: repeat(2, 1fr); }
+  .ic-grid-links.mobile-at-xl.three-columns {
+    grid-template-columns: repeat(3, 1fr); }
+  .ic-grid-links.mobile-at-xl.four-columns {
+    grid-template-columns: repeat(4, 1fr); } }
+
+.pagination span.page-link {
+  padding: .5rem 0.75rem; }
+
+/*--------------------------------------------------------------
+3. Align left, align right, align center.
+--------------------------------------------------------------*/
+@media (min-width: calc(992px)) {
+  figure.wp-block-image.alignleft {
+    float: left;
+    -webkit-margin-end: 2rem;
+            margin-inline-end: 2rem;
+    -webkit-margin-start: calc( ( 100% - 776px ) / 2) !important;
+            margin-inline-start: calc( ( 100% - 776px ) / 2) !important; }
+  figure.wp-block-image.alignright {
+    float: right;
+    -webkit-margin-end: calc( ( 100% - 776px ) / 2) !important;
+            margin-inline-end: calc( ( 100% - 776px ) / 2) !important;
+    -webkit-margin-start: 2rem;
+            margin-inline-start: 2rem; }
+  figure.wp-block-image.aligncenter {
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    -webkit-margin-end: auto !important;
+            margin-inline-end: auto !important;
+    -webkit-margin-start: auto !important;
+            margin-inline-start: auto !important; }
+  figure.wp-block.wp-block-image.alignleft {
+    -webkit-margin-start: calc( ( 100% - 1200px ) / 2) !important;
+            margin-inline-start: calc( ( 100% - 1200px ) / 2) !important; }
+  figure.wp-block.wp-block-image.alignright {
+    -webkit-margin-end: calc( ( 100% - 1200px ) / 2) !important;
+            margin-inline-end: calc( ( 100% - 1200px ) / 2) !important; } }
