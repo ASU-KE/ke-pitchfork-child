@@ -55,3 +55,8 @@ add_action( 'after_setup_theme', 'ke_pitchfork_child_css' );
 // require get_stylesheet_directory() . '/inc/uds-calendar-dates.php';
 // require get_stylesheet_directory() . '/inc/calendar-date-validation.php';
 // require get_stylesheet_directory() . '/inc/rest-api-extensions.php';
+
+/**
+ * Add Theme Support for Project Thumbnails
+ * */
+add_theme_support( 'post-thumbnails', array( 'project' ) );
